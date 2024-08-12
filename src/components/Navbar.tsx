@@ -16,20 +16,20 @@ const Navbar: React.FC = () => {
           </div>
         </Link>
         {/* Navigation Links */}
-        <ul className="flex space-x-6">
-          <li className='hover:bg-slate-300'>
+        <ul className="flex space-x-2">
+          <li className='hover:bg-slate-300 w-24 rounded-md'>
             <Link href="/" passHref>
-              <div className="hover:text-gray-700 transition duration-300 cursor-pointer hover:bg-slate-300 px-2 py-1 rounded-sm">Home</div>
+              <div className="hover:text-gray-700 transition duration-300  cursor-pointer hover:bg-slate-300 px-2 py-1 rounded-sm text-center">Home</div>
             </Link>
           </li>
-          <li>
+          <li className='hover:bg-slate-300 w-24 rounded-md'>
             <Link href="/about" passHref>
-              <div className="hover:text-gray-700 transition duration-300 cursor-pointer hover:bg-slate-300 px-2 py-1 rounded-sm">About Us</div>
+              <div className="hover:text-gray-700 transition duration-300 cursor-pointer hover:bg-slate-300 px-2 py-1 rounded-sm text-center">About Us</div>
             </Link>
           </li>
-          <li>
+          <li className='hover:bg-slate-300 w-24'>
             <Link href="/contact" passHref>
-              <div className="hover:text-gray-700 transition duration-300 cursor-pointer hover:bg-slate-300 px-2 py-1 rounded-sm">Contact</div>
+              <div className="hover:text-gray-700 transition duration-300 cursor-pointer hover:bg-slate-300 px-2 py-1 rounded-sm text-center">Contact</div>
             </Link>
           </li>
         </ul>
