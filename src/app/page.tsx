@@ -1,10 +1,11 @@
-// src/app/page.tsx
+"use client"
 import React from 'react';
 import Link from 'next/link';
 import UserForm from '../components/UserForm';
 import {products} from '../data/products';
 import ProductCard from '../components/ProductCard';
 import ProductList from '../components/ProductsList';
+import ProductExport from '@/components/ProductExport';
 
 const HomePage: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const HomePage: React.FC = () => {
       </div>
       <ProductList />
       <UserForm/>
+      <ProductExport />
     </section>
   );
 };
