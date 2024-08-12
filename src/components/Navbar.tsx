@@ -6,7 +6,7 @@ import logo from '../../public/logo.svg'; // Adjust the path to your logo file
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-gray-900 text-white shadow-md">
+    <nav className="bg-gray-500 text-white shadow-md">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo Section */}
         <Link href="/" passHref>
@@ -17,19 +17,19 @@ const Navbar: React.FC = () => {
         </Link>
         {/* Navigation Links */}
         <ul className="flex space-x-6">
-          <li>
+          <li className='hover:bg-slate-300'>
             <Link href="/" passHref>
-              <div className="hover:text-gray-300 transition duration-300 cursor-pointer">Home</div>
+              <div className="hover:text-gray-700 transition duration-300 cursor-pointer hover:bg-slate-300 px-2 py-1 rounded-sm">Home</div>
             </Link>
           </li>
           <li>
             <Link href="/about" passHref>
-              <div className="hover:text-gray-300 transition duration-300 cursor-pointer">About Us</div>
+              <div className="hover:text-gray-700 transition duration-300 cursor-pointer hover:bg-slate-300 px-2 py-1 rounded-sm">About Us</div>
             </Link>
           </li>
           <li>
             <Link href="/contact" passHref>
-              <div className="hover:text-gray-300 transition duration-300 cursor-pointer">Contact</div>
+              <div className="hover:text-gray-700 transition duration-300 cursor-pointer hover:bg-slate-300 px-2 py-1 rounded-sm">Contact</div>
             </Link>
           </li>
         </ul>
