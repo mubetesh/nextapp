@@ -26,3 +26,14 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Add this to your global CSS file */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+

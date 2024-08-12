@@ -2,7 +2,8 @@
 import React from 'react';
 import Link from 'next/link';
 import UserForm from '../components/UserForm';
-import Card from '../components/Card'
+import {products} from '../data/products';
+import ProductCard from '../components/ProductCard';
 
 const HomePage: React.FC = () => {
   return (
@@ -15,7 +16,11 @@ const HomePage: React.FC = () => {
         <Link href="/contact" className="bg-green-600 text-white py-2 px-4 rounded-lg shadow hover:bg-green-700">Contact Us
         </Link>
       </div>
-      <Card />
+      <div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {products.map(product => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </div>
       <UserForm/>
     </section>
   );
