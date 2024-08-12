@@ -1,0 +1,14 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#282c34" stroke="#61dafb" stroke-width="5" />
+  
+  <!-- Code Bracket Symbol -->
+  <text x="50%" y="50%" font-family="Courier New, monospace" font-size="80" fill="#61dafb" text-anchor="middle" alignment-baseline="middle">
+    {}
+  </text>
+  
+  <!-- Logo Text -->
+  <text x="50%" y="80%" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle" alignment-baseline="middle">
+    DevLogo
+  </text>
+</svg>
