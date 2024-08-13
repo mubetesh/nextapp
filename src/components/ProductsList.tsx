@@ -1,5 +1,5 @@
 "use client"
-
+import Image from 'next/image'
 import React, { useState } from 'react';
 import { Product, products as productData } from '../data/products';
 import ProductCard from './ProductCard';

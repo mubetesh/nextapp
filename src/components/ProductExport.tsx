@@ -1,4 +1,5 @@
-"use client"
+"use client";
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { Product, products as productData } from '../data/products';
 import ProductCard from './ProductCard';
@@ -18,6 +19,10 @@ const ProductExport: React.FC = () => {
           return a.name.localeCompare(b.name);
         case 'name-desc':
           return b.name.localeCompare(a.name);
+        case 'date-asc':
+          return new Date(a.createdDate).getTime() - new Date(b.createdDate).getTime();
+        case 'date-desc':
+          return new Date(b.createdDate).getTime() - new Date(a.createdDate).getTime();
         default:
           return 0;
       }
@@ -31,15 +36,15 @@ const ProductExport: React.FC = () => {
     sortProducts(newSortMethod);
   };
 
-  // Function to export products as CSV
   const exportToCSV = () => {
-    const headers = ['ID', 'Name', 'Description', 'Price', 'Image URL'];
+    const headers = ['ID', 'Name', 'Description', 'Price', 'Image URL', 'Date'];
     const rows = filteredProducts.map(p => [
       p.id,
       p.name,
       p.description,
       p.price,
-      p.imageUrl
+      p.imageUrl,
+      p.createdDate
     ]);
 
     let csvContent = "data:text/csv;charset=utf-8," 
@@ -55,7 +60,6 @@ const ProductExport: React.FC = () => {
     link.click();
   };
 
-  // Function to share product information
   const shareProduct = (product: Product) => {
     const shareData = {
       title: product.name,
@@ -88,6 +92,8 @@ const ProductExport: React.FC = () => {
               <option value="price-desc">Price: High to Low</option>
               <option value="name-asc">Name: A to Z</option>
               <option value="name-desc">Name: Z to A</option>
+              <option value="date-asc">Date: Oldest First</option>
+              <option value="date-desc">Date: Newest First</option>
             </select>
           </div>
           <button 

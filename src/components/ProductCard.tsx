@@ -1,4 +1,5 @@
 // src/components/ProductCard.tsx
+import Image from 'next/image';
 import React from 'react';
 import { Product } from '../data/products';
 
@@ -9,6 +10,8 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
         src={product.imageUrl}
         alt={product.name}
         className="w-full h-48 object-cover"
+        width={100}
+        height={192}
       />
       <div className="p-4">
         <h2 className="text-xl font-semibold text-gray-900">{product.name}</h2>

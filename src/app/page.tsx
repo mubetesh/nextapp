@@ -2,12 +2,18 @@
 import React from 'react';
 import Link from 'next/link';
 import UserForm from '../components/UserForm';
-import {products} from '../data/products';
 import ProductCard from '../components/ProductCard';
 import ProductList from '../components/ProductsList';
 import ProductExport from '@/components/ProductExport';
+import ProductTable from '@/components/ProductTable';
+import CardSlider from '@/components/Card';
+
+import { products } from '../data/products';
+import Image from 'next/image';
+
 
 const HomePage: React.FC = () => {
+
   return (
     <section className="text-center min-h-full p-6">
       <h1 className="text-4xl font-extrabold mb-4">Welcome to MyWebsite</h1>
@@ -26,8 +32,13 @@ const HomePage: React.FC = () => {
       <ProductList />
       <UserForm/>
       <ProductExport />
+      <ProductTable />
+      <CardSlider products={products}/>
+ 
+
     </section>
   );
 };
+
 
 export default HomePage;
