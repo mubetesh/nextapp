@@ -10,12 +10,14 @@ const ProductForm: React.FC<ProductFormProps> = ({ onAddProduct }) => {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState<number | ''>('');
   const [imageUrl, setImageUrl] = useState('');
-  const [createdDate, setCreatedDate] = useState('');
+  const [date, setDate] = useState(''); // Updated to match field name
+  const [category, setCategory] = useState('');
+  const [rating, setRating] = useState<number | ''>('');
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (!name || !description || !price || !imageUrl || !createdDate) {
+    if (!name || !description || !price || !imageUrl || !date || !category || !rating) {
       alert('Please fill out all fields.');
       return;
     }
@@ -26,7 +28,9 @@ const ProductForm: React.FC<ProductFormProps> = ({ onAddProduct }) => {
       description,
       price,
       imageUrl,
-      createdDate,
+      date, // Updated to match field name
+      category,
+      rating,
     };
 
     // Send data to the API route
@@ -45,7 +49,9 @@ const ProductForm: React.FC<ProductFormProps> = ({ onAddProduct }) => {
       setDescription('');
       setPrice('');
       setImageUrl('');
-      setCreatedDate('');
+      setDate(''); // Updated to match field name
+      setCategory('');
+      setRating('');
     } else {
       alert('Failed to add product');
     }
@@ -90,11 +96,32 @@ const ProductForm: React.FC<ProductFormProps> = ({ onAddProduct }) => {
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 mb-2">Created Date</label>
+        <label className="block text-gray-700 mb-2">Date</label>
         <input
           type="date"
-          value={createdDate}
-          onChange={(e) => setCreatedDate(e.target.value)}
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          className="w-full p-2 border border-gray-300 rounded"
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-gray-700 mb-2">Category</label>
+        <input
+          type="text"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="w-full p-2 border border-gray-300 rounded"
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-gray-700 mb-2">Rating</label>
+        <input
+          type="number"
+          step="0.1"
+          min="0"
+          max="5"
+          value={rating}
+          onChange={(e) => setRating(Number(e.target.value))}
           className="w-full p-2 border border-gray-300 rounded"
         />
       </div>
