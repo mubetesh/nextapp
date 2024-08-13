@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from 'react';
 import { Product, products as initialProducts } from '../data/products';
 import DatePicker from 'react-datepicker';
@@ -8,18 +6,25 @@ import 'react-datepicker/dist/react-datepicker.css';
 // Sorting function
 const sortProducts = (products: Product[], sortKey: keyof Product, sortOrder: 'asc' | 'desc') => {
     return [...products].sort((a, b) => {
+        // Handle date type specifically
         if (sortKey === 'date') {
             const dateA = new Date(a[sortKey]);
             const dateB = new Date(b[sortKey]);
             return sortOrder === 'asc' ? dateA.getTime() - dateB.getTime() : dateB.getTime() - dateA.getTime();
         }
-        if (typeof a[sortKey] === 'string') {
+
+        // Handle string type
+        if (typeof a[sortKey] === 'string' && typeof b[sortKey] === 'string') {
             const strA = a[sortKey].toLowerCase();
             const strB = b[sortKey].toLowerCase();
             return sortOrder === 'asc' ? strA.localeCompare(strB) : strB.localeCompare(strA);
         }
-        if (a[sortKey] < b[sortKey]) return sortOrder === 'asc' ? -1 : 1;
-        if (a[sortKey] > b[sortKey]) return sortOrder === 'asc' ? 1 : -1;
+
+        // Handle number type
+        if (typeof a[sortKey] === 'number' && typeof b[sortKey] === 'number') {
+            return sortOrder === 'asc' ? a[sortKey] - b[sortKey] : b[sortKey] - a[sortKey];
+        }
+
         return 0;
     });
 };
