@@ -22,6 +22,11 @@ const Navbar: React.FC = () => {
               <div className="hover:text-gray-700 transition duration-300  cursor-pointer hover:bg-slate-300 px-2 py-1 rounded-sm text-center">Home</div>
             </Link>
           </li>
+          <li className='hover:bg-slate-300 w-24'>
+            <Link href="/products" passHref>
+              <div className="hover:text-gray-700 transition duration-300 cursor-pointer hover:bg-slate-300 px-2 py-1 rounded-sm text-center">Products</div>
+            </Link>
+          </li>
           <li className='hover:bg-slate-300 w-24 rounded-md'>
             <Link href="/about" passHref>
               <div className="hover:text-gray-700 transition duration-300 cursor-pointer hover:bg-slate-300 px-2 py-1 rounded-sm text-center">About Us</div>
@@ -32,6 +37,7 @@ const Navbar: React.FC = () => {
               <div className="hover:text-gray-700 transition duration-300 cursor-pointer hover:bg-slate-300 px-2 py-1 rounded-sm text-center">Contact</div>
             </Link>
           </li>
+          
         </ul>
       </div>
     </nav>
