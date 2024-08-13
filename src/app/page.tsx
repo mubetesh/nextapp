@@ -7,9 +7,11 @@ import ProductList from '../components/ProductsList';
 import ProductExport from '@/components/ProductExport';
 import ProductTable from '@/components/ProductTable';
 import CardSlider from '@/components/Card';
+import TestimonialList from "@/components/TestimonialList"
 
 import { products } from '../data/products';
 import Image from 'next/image';
+import BackToTop from '@/components/BackToTop';
 
 
 const HomePage: React.FC = () => {
@@ -34,6 +36,8 @@ const HomePage: React.FC = () => {
       <ProductExport />
       <ProductTable />
       <CardSlider products={products}/>
+      <TestimonialList />
+      <BackToTop />
  
 
     </section>

@@ -1,4 +1,6 @@
 // src/app/contact/page.tsx
+import BackToTop from '@/components/BackToTop';
+import HelloCard from '@/components/Hello';
 import React from 'react';
 
 const ContactPage: React.FC = () => {
@@ -8,7 +10,8 @@ const ContactPage: React.FC = () => {
        <h1 className="text-4xl font-bold mb-4">Products</h1>
         <p className="text-lg text-gray-600">We’d like to share you our products here.</p>
       </header>
-
+      <HelloCard />
+      <BackToTop />
     </section>
   );
 };
