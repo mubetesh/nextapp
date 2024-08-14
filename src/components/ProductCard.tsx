@@ -1,11 +1,14 @@
 // src/components/ProductCard.tsx
 import React from 'react';
 import { Product } from '../data/products';
+import Image from 'next/image';
+import { customLoader } from '../utils/customLoader';
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   return (
     <div className="relative max-w-sm mx-auto bg-gray-200 shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-      <img
+      <image
+        loader = {customLoader}
         src={product.imageUrl}
         alt={product.name}
         className="w-full h-48 object-cover"
