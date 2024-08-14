@@ -1,4 +1,5 @@
 // src/app/contact/page.tsx
+import BackToTop from '@/components/BackToTop';
 import React from 'react';
 
 const ContactPage: React.FC = () => {
@@ -42,6 +43,7 @@ const ContactPage: React.FC = () => {
     </button>
   </form>
 </div>
+<BackToTop />
 
     </section>
   );

@@ -1,4 +1,4 @@
-"use client"
+// components/ProductList.tsx
 
 import React, { useState } from 'react';
 import { Product, products as productData } from '../data/products';

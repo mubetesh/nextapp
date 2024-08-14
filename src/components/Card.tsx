@@ -1,48 +1,49 @@
-// src/components/SaleCard.tsx
-import React from 'react';
+import React, { useState } from 'react';
+import ProductCard from './ProductCard';
+import { Product } from '../data/products';
 
-const SaleCard: React.FC = () => {
+interface CardSliderProps {
+  products: Product[];
+}
+
+const CardSlider: React.FC<CardSliderProps> = ({ products }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextCard = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
+  };
+
+  const prevCard = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? products.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
-    <div className="max-w-sm mx-auto bg-gray-200 shadow-lg rounded-lg overflow-hidden my-6">
-      {/* Product Image */}
-      <img
-        src="https://via.placeholder.com/400x250?text=Product+Image"
-        alt="Sample Product Image"
-        className="w-full h-48 object-cover"
-      />
-
-      {/* Card Content */}
-      <div className="p-4">
-        {/* Product Name */}
-        <h2 className="text-xl font-semibold text-gray-900">Product Name</h2>
-
-        {/* Product Description */}
-        <p className="mt-2 text-gray-700">
-          A brief description of the product goes here. It highlights the key features and benefits of the product.
-        </p>
-
-        {/* Pricing and CTA */}
-        <div className="mt-4">
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-2xl font-bold text-violet-600">$29.99</span>
-            <button className="px-4 py-2 bg-violet-600 text-white font-semibold rounded-lg hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-opacity-50 transition duration-200">
-              Buy Now
-            </button>
-          </div>
-
-          {/* For Sale and For Rent Buttons */}
-          <div className="flex space-x-2">
-            <button className="px-4 py-2 bg-violet-500 text-white font-semibold rounded-lg hover:bg-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-opacity-50 transition duration-200">
-              For Sale
-            </button>
-            <button className="px-4 py-2 bg-gray-500 text-white font-semibold rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition duration-200">
-              For Rent
-            </button>
-          </div>
+    <div className="relative max-w-sm mx-auto">
+      <button
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg z-10"
+        onClick={prevCard}
+      >
+        &lt;
+      </button>
+      <div className="overflow-hidden">
+        <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+          {products.map((product) => (
+            <div key={product.id} className="w-full flex-shrink-0">
+              <ProductCard product={product} />
+            </div>
+          ))}
         </div>
       </div>
+      <button
+        className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-lg z-10"
+        onClick={nextCard}
+      >
+        &gt;
+      </button>
     </div>
   );
 };
 
-export default SaleCard;
+export default CardSlider;

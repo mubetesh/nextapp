@@ -1,4 +1,5 @@
 // src/app/about/page.tsx
+import BackToTop from '@/components/BackToTop';
 import React from 'react';
 
 const AboutPage: React.FC = () => {
@@ -37,6 +38,7 @@ const AboutPage: React.FC = () => {
           We believe in the power of teamwork and continuous learning, which helps us stay ahead in a rapidly evolving industry.
         </p>
       </div>
+      <BackToTop />
     </section>
   );
 };
