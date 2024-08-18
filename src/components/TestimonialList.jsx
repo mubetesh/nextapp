@@ -1,6 +1,7 @@
 // components/TestimonialList.tsx
 import React from 'react';
 import { testimonials } from '../data/testimonials';
+import Image from 'next/image';
 
 const TestimonialList = () => {
     return (
@@ -12,10 +13,12 @@ const TestimonialList = () => {
                 {testimonials.map((testimonial) => (
                     <div key={testimonial.id} className="p-6 border rounded-lg shadow-lg bg-white max-w-md mx-auto">
                     {testimonial.imageUrl && (
-                        <img
+                        <Image
                             src={testimonial.imageUrl}
                             alt={testimonial.name}
                             className="w-20 h-20 rounded-full mb-4 mx-auto border-2 border-gray-300"
+                            width="300"
+                            height="300"
                         />
                     )}
                     <h3 className="text-2xl font-semibold text-gray-800 text-center">{testimonial.name}</h3>

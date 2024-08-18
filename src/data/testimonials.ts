@@ -18,7 +18,7 @@ export const testimonials: Testimonial[] = [
         position: 'CEO',
         company: 'Tech Innovations',
         message: 'This is a fantastic product! It has really helped our team work more efficiently.',
-        imageUrl: 'https://via.placeholder.com/100x100?text=Jane+Doe', // Optional
+        imageUrl: '/images/product-a.jpg', // Optional
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ export const testimonials: Testimonial[] = [
         position: 'CTO',
         company: 'Creative Solutions',
         message: 'Highly recommend this to anyone looking to improve their workflow. It’s a game changer!',
-        imageUrl: 'https://via.placeholder.com/100x100?text=John+Smith', // Optional
+        imageUrl: '/images/product-a.jpg', // Optional
     },
     {
         id: 3,
@@ -34,6 +34,6 @@ export const testimonials: Testimonial[] = [
         position: 'Product Manager',
         company: 'NextGen Tech',
         message: 'An amazing tool with a user-friendly interface. Our productivity has skyrocketed!',
-        imageUrl: 'https://via.placeholder.com/100x100?text=Alice+Johnson', // Optional
+        imageUrl: '/images/product-a.jpg', // Optional
     },
 ];

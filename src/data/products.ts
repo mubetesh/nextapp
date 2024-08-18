@@ -176,39 +176,4 @@ export const products: Product[] = [
     rating: 4.6,
     isOnSale: false  // Example flag
   }
-<<<<<<< HEAD
-  
-  export const products: Product[] = [
-    {
-      id: 1,
-      name: 'Product One',
-      description: 'This is a brief description of Product One.',
-      price: 29.99,
-      imageUrl: '../assets/Orange_Sport_Car_Wallpaper.jpg',
-    },
-    {
-      id: 2,
-      name: 'Product Two',
-      description: 'This is a brief description of Product Two.',
-      price: 39.99,
-      imageUrl: '../assets/Green_Sport_Car_Black_Wallpaper.jpg',
-    },
-    {
-      id: 3,
-      name: 'Product Three',
-      description: 'This is a brief description of Product Three.',
-      price: 49.99,
-      imageUrl: '../assets/Green_Sport_Car_Black_Wallpaper.jpg',
-    },
-    {
-      id: 3,
-      name: 'Product TFour',
-      description: 'This is a brief description of Product Four.',
-      price: 59.99,
-      imageUrl: '../assets/Green_Sport_Car_Black_Wallpaper.jpg',
-    },
-  ];
-  
-=======
 ];
->>>>>>> 6ff071ab85eecfc9e1b115bddc454af6df2f4e22

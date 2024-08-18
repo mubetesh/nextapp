@@ -11,12 +11,14 @@ import TestimonialList from "@/components/TestimonialList"
 import { products } from '../data/products';
 import Image from 'next/image';
 import BackToTop from '@/components/BackToTop';
+import Hero from '../components/Hero'
 
 
 const HomePage: React.FC = () => {
 
   return (
     <section className="text-center min-h-full p-6">
+
       <h1 className="text-4xl font-extrabold mb-4">Welcome to MyWebsite</h1>
       <p className="text-lg mb-8">We provide professional services with a touch of elegance.</p>
       <div className="flex justify-center space-x-6">
@@ -25,18 +27,16 @@ const HomePage: React.FC = () => {
         <Link href="/contact" className="bg-green-600 text-white py-2 px-4 rounded-lg shadow hover:bg-green-700">Contact Us
         </Link>
       </div>
-      <div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map(product => (
-        <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-      <ProductList />
+      <div>
+      <Hero />
       <UserForm/>
       <ProductExport />
       <ProductTable />
       <CardSlider products={products}/>
       <TestimonialList />
       <BackToTop />
+      </div>
+      
  
 
     </section>
