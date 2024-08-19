@@ -13,7 +13,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
     const emptyStars = 5 - Math.ceil(rating);
     const starDecimal = rating-fullStars
     const gradientTextStyle: React.CSSProperties = {
-      background: `linear-gradient(to right, #eab308 ${starDecimal*100}%, #d1d5db ${starDecimal*100}%)`,
+      background: `linear-gradient(to right, #eab308 ${starDecimal*100}%, #d1d5db ${(1-starDecimal)*100}%)`,
       WebkitTextFillColor: 'transparent',
       WebkitBackgroundClip: 'text'
   };
