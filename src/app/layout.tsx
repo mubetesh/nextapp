@@ -11,7 +11,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <header>
           <Navbar />
         </header>
-        <main className="flex-grow container mx-auto p-6">
+        <main className="flex-grow container mx-auto">
           {children}
         </main> 
         <footer>
