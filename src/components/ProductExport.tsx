@@ -95,7 +95,7 @@ const ProductExport: React.FC = () => {
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
 
   return (
-    <div className="p-4 bg-gray-100 min-h-screen">
+    <div className="relative p-4 bg-gray-100 min-h-screen">
       <header className="mb-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">Product List</h1>
         <div className="flex justify-between items-center mb-6">

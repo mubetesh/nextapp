@@ -1,11 +1,26 @@
-import React from 'react';
+'use client'
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '../../public/logo.svg'; // Adjust the path to your logo file
+import React, {useState, useEffect} from 'react'
 
 const Navbar: React.FC = () => {
+  const [showNav, setShowNav] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowNav(window.scrollY > 100); // Show button after scrolling down 300px
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
   return (
-    <nav className="bg-white/10 text-white shadow-lg backdrop-blur-md">
+    <nav className = {showNav ?"fixed top-0 left-[5%]  bg-white text-gray-800 backdrop-blur-md z-10 w-[90%]": "fixed  bg-white/10 text-white backdrop-blur-lg  w-full z-10"} >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo Section */}
         <Link href="/" passHref>
