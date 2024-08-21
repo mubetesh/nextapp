@@ -11,18 +11,23 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 !== 0;
     const emptyStars = 5 - Math.ceil(rating);
-
+    const starDecimal = rating-fullStars
+    const gradientTextStyle: React.CSSProperties = {
+      background: `linear-gradient(to right, #eab308 ${starDecimal*100}%, #d1d5db ${(1-starDecimal)*100}%)`,
+      WebkitTextFillColor: 'transparent',
+      WebkitBackgroundClip: 'text'
+  };
     return (
       <div key={product.id} className="flex items-center">
         {Array(fullStars).fill(<span key={product.id} className="text-yellow-500">&#9733;</span>)}
-        {halfStar && <span key={product.id} className="text-yellow-500">&#9733;</span>}
+        {halfStar && <span key={product.id} style={gradientTextStyle}>&#9733;</span>}
         {Array(emptyStars).fill(<span key={product.id} className="text-gray-300">&#9733;</span>)}
       </div>
     );
   };
 
   return (
-    <div key={product.id}  className="relative max-w-sm mx-auto bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+    <div key={product.id}  className="relative max-w-sm mx-auto bg-slate-300 shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
       {/* Sale Flag */}
       {product.isOnSale ? (
         <div key={product.id} className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
@@ -46,8 +51,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
         <h2 key={product.id} className="text-xl font-semibold text-gray-900">{product.name}</h2>
         <p key={product.id} className="mt-2 text-gray-700">{product.description}</p>
         <p key={product.id} className="mt-2 text-gray-600 italic">Category: {product.category}</p>
-        <div key={product.id} className="mt-2 flex items-center">
-          {renderStars(product.rating)}
+        <div key={product.id} className="mt-2 flex items-center justify-center text-slate-300"><h3>Rating&nbsp;&nbsp; </h3><span>{renderStars(product.rating)}</span>
         </div>
         <p key={product.id} className="mt-2 text-gray-500 text-sm">Added on: {new Date(product.date).toLocaleDateString()}</p>
         <div key={product.id} className="mt-4 flex items-center justify-between">

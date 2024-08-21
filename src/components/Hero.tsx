@@ -2,11 +2,11 @@
 
 import React from 'react';
 import Image from 'next/image';
-import heroImage from '../../public/images/default.jpg'; // Replace with an appropriate hero image for a car dealership or rental
+import heroImage from '../../public/images/product-b.jpg'; // Replace with an appropriate hero image for a car dealership or rental
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative bg-gray-800 text-white h-screen flex items-center justify-center">
+    <section className="relative bg-gray-800 text-white h-screen flex items-center p-4 justify-center -mt-16 -z-10">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -16,7 +16,8 @@ const Hero: React.FC = () => {
           objectFit="cover"
           className="object-cover brightness-50"
         />
-        <div className="absolute inset-0 bg-black opacity-40"></div> {/* Overlay */}
+        <div className="absolute p-4 inset-0 bg-black opacity-40"></div> {/* Overlay */}
+        <h1>Hello World</h1>
       </div>
 
       {/* Content */}
