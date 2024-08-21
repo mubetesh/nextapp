@@ -28,7 +28,6 @@ const HomePage: React.FC = () => {
       <BackToTop />
       </div>
       
- 
 
     </section>
   );
