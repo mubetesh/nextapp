@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
   return (
-    <nav className = {showNav ?"fixed top-0 left-[5%] bg-white text-gray-800 backdrop-blur-md z-10 w-[90%]": "fixed  bg-white/10 text-white backdrop-blur-lg  w-full z-10"} >
+    <nav className = {showNav ?"fixed top-0 left-[5%] bg-white text-gray-800 backdrop-blur-md z-10 w-9/10": "fixed  bg-white/10 text-white backdrop-blur-lg  w-full z-10"} >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo Section */}
         <Link href="/" passHref>
