@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
       <Hero />
       <ProductExport />
       <ProductTable />
-      <CardSlider products={products}/>
+      <CardSlider products={products} />
       <TestimonialList />
       <BackToTop />
       </div>

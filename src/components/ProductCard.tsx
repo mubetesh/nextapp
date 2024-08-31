@@ -27,7 +27,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   };
 
   return (
-    <div key={product.id}  className="relative max-w-sm mx-auto bg-slate-300 shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+    <div key={product.id}  className="relative max-w-sm mx-auto bg-slate-300 shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-102 hover:shadow-xl">
       {/* Sale Flag */}
       {product.isOnSale ? (
         <div key={product.id} className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">

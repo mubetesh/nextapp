@@ -6,7 +6,7 @@ import ProductCard from './ProductCard';
 
 const ITEMS_PER_PAGE = 4; // Number of items per page
 
-const ProductExport: React.FC = () => {
+const ProductExport : React.FC = () => {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(productData);
   const [sortMethod, setSortMethod] = useState<string>('price-asc');
   const [currentPage, setCurrentPage] = useState<number>(1);
